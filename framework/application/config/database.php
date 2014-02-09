@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'dev_materialDB';
-$db['default']['password'] = 'dev_materialDB';
+$db['default']['password'] = 'Valence123';
 $db['default']['database'] = 'dev_materialDB';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
