@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'materialDB';
-$db['default']['password'] = '123';
+$db['default']['username'] = 'materialdb_user';
+$db['default']['password'] = 'Valence123';
 $db['default']['database'] = 'dev_materialDB';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
