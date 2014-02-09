@@ -1,0 +1,330 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 6357,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/.gitignore",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/.gitignore",
+		"/C/SIMULIA/abq_tmp/X4/lauch_calc.sh",
+		"/C/SIMULIA/abq_tmp/X4/abaqus_acis.log",
+		"/C/SIMULIA/abq_tmp/X4/errors.txt",
+		"/C/SIMULIA/abq_tmp/X4/execInp.py",
+		"/C/SIMULIA/abq_tmp/X4/abaqus.rpy",
+		"/C/SIMULIA/abq_tmp/X4/userscript_cae_pre.py",
+		"/Y/abaqusMacros.py",
+		"/C/SIMULIA/abq_tmp/Job-1.log",
+		"/Y/04-stage_M2_SKF/03-script Python Abaqus/calculRaideur_courbe.py",
+		"/Y/04-stage_M2_SKF/03-script Python Abaqus/exemple babacar - V237.py",
+		"/C/SIMULIA/abq_tmp/CESA/userscript_odb.py",
+		"/Y/04-stage_M2_SKF/03-script Python Abaqus/exemple 1 - create parts.py",
+		"/Y/04-stage_M2_SKF/03-script Python Abaqus/calculRaideur.py",
+		"/Y/abaqus.rpy",
+		"/C/SIMULIA/abq_tmp/yoke/sertissage_3d_M1_v5.sta",
+		"/C/SIMULIA/abq_tmp/A30Neo_wire_plasticT.log",
+		"/C/SIMULIA/abq_tmp/A320Neo_wire_plasticCI.log",
+		"/C/SIMULIA/abq_tmp/yoke/sertissage_V6_static.sta",
+		"/C/SIMULIA/abq_tmp/yoke/sertissage_3d_M1_v6_spingback_V1.sta",
+		"/C/SIMULIA/abq_tmp/yoke/sertissage_3d_M1_v6.sta",
+		"/C/SIMULIA/abq_tmp/A320Neo_wire_plasticT.log",
+		"/C/SIMULIA/abq_tmp/A320Neo_wire_plasticT.sta",
+		"/C/SIMULIA/abq_tmp/A320Neo_wire_plasticT.msg",
+		"/C/SIMULIA/abq_tmp/A320Neo_wire_plasticCI.msg",
+		"/C/SIMULIA/abq_tmp/A320Neo_wire_plasticCI.sta",
+		"/C/Users/eb1445/Desktop/1.sql",
+		"/C/Users/eb1445/Desktop/dev_materialDB.sql",
+		"/C/SIMULIA/abq_tmp/yoke/sertissage_V6_static_V2.msg",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v6_F130kN.sta",
+		"/C/Temp/abq_tmp/yoke/sertissage_V6_static.sta",
+		"/C/Temp/abq_tmp/yoke/sertissage_V6_static.msg",
+		"/C/Users/eb1445/Desktop/SIM_Abaqus_Extend.AllOS/1/readme.txt",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v6_F130kN.msg",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v6_F130kN.log",
+		"/C/Temp/abq_tmp/A320Neo_wire_plasticCI.sta",
+		"/C/Temp/abq_tmp/A320Neo_wire_plasticCI.log",
+		"/C/Temp/abq_tmp/A320Neo_wire_plasticT.sta",
+		"/C/Temp/abq_tmp/A320Neo_wire_plasticT.log",
+		"/C/Temp/abq_tmp/A320Neo_wire_plasticT.msg",
+		"/C/Temp/abq_tmp/A320Neo_wire.sta",
+		"/C/Temp/abq_tmp/A320Neo_wire.log",
+		"/C/Temp/abq_tmp/A320Neo_wire.msg",
+		"/C/Temp/abq_tmp/A320Neo_wire.dat",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.sta",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.msg",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.dat",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.log",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.inp",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.odb",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.sim",
+		"/C/Temp/abq_tmp/A320Neo_compression_test_1.stt",
+		"/C/Users/eb1445/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Temp/abq_tmp/abaqus_v6.env",
+		"/C/SIMULIA/Abaqus/6.13-1/SMA/site/abaqus_v6.env",
+		"/C/Temp/abq_tmp/yoke/sertissage_V6_static.log",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v6_spingback_V1.dat",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v6_spingback_V1.log",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v6_spingback_V1.msg",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v6_spingback_V1.sta",
+		"/C/Temp/BEAST_models/spb/spb_rigid.simlog",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v5.sta",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v5_springback_V33.sta",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v5_springback_V3.sta",
+		"/Z/11 - Tool Development/00-transfert/AFT/AFT-1000-test-V1.sta",
+		"/C/Temp/abq_tmp/yoke/rotule_oyoke_static_V2.inp",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v5_springback_V3.msg",
+		"/C/Temp/abq_tmp/yoke/Job-6.sta",
+		"/C/Temp/abq_tmp/yoke/Job-6.msg",
+		"/C/Temp/abq_tmp/yoke/Job-6.dat",
+		"/C/Temp/abq_tmp/yoke/Job-6.log",
+		"/C/Users/eb1445/Desktop/I4LS.INI",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v5_springback_V3.dat",
+		"/C/Temp/abq_tmp/yoke/sertissage_3d_M1_v5_springback_V3.log",
+		"/C/Temp/abq_tmp/yoke/Job-6.inp",
+		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/21 - A320Neo - ZWME25RSP6/Calculation Files & Macro/Results/Job-3.inp",
+		"/C/Temp/abq_tmp/AFT/AFT-1000-test-V2.log",
+		"/C/Temp/abq_tmp/AFT/AFT-1000-test-V2.sta",
+		"/C/SIMULIA/Abaqus/6.13-1/SMA/site/abaqusinc.env",
+		"/Z/11 - Tool Development/00-transfert/AFT/AFT-1000-test-V1.msg",
+		"/Z/11 - Tool Development/00-transfert/AFT/AFT-1000-test-V1.log",
+		"/C/Temp/abq_tmp/Job-1.log",
+		"/C/Temp/abq_tmp/Job-1.msg",
+		"/C/Temp/abq_tmp/Job-1.dat",
+		"/C/Temp/abq_tmp/Job-1.sta",
+		"/C/Temp/abq_tmp/yoke/Job-3.inp",
+		"/C/Windows/I4LS.INI",
+		"/H/admin/data/user/CB5037.bat",
+		"/H/admin/data/workstation/FRSVACZC1048G91.bat",
+		"/H/admin/data/workstation/FRLNSCZC1145VR2.bat",
+		"/H/admin/data/workstation/FRLNSCZC10540M0.bat",
+		"/H/admin/data/user/DX1176.bat",
+		"/H/admin/data/workstation/station_type.bat",
+		"/H/admin/data/workstation/FRSVACND1031HC5.bat",
+		"/H/admin/data/user/pchalencon.bat",
+		"/H/admin/data/user/pmasson.bat",
+		"/H/admin/data/user/GR2135.bat",
+		"/H/admin/data/user/JD7933.bat",
+		"/H/admin/data/user/FP43177.bat",
+		"/H/admin/data/user/EX4156.bat",
+		"/H/admin/data/user/c006343.bat",
+		"/H/admin/data/user/c006304.bat",
+		"/H/admin/data/workstation/FRAVA5CB223298N.bat",
+		"/C/Users/eb1445/Documents/workplace/github/LMT/flexlmlogparser.py",
+		"/C/Users/eb1445/Documents/workplace/github/LMT/flexlmlogparser.txt",
+		"/C/Temp/abq_tmp/AFT-1000.sta",
+		"/C/Temp/abq_tmp/AFT-1000.msg",
+		"/C/Temp/abq_tmp/AFT-1000.log",
+		"/C/Temp/BEAST_models/segmented_cage/Model_REFERENCE_PARAMETERS_segmented_cage.log",
+		"//frvalas002/General$/admin/def_repWF4.bat",
+		"//frvalas002/General$/admin/Configuration_StationWF4.bat",
+		"//frvalas002/General$/admin/AutoRun_svallierWF4.bat",
+		"//frvalas002/General$/admin/connect.bat",
+		"/C/Temp/abq_tmp/X4_IR_IT0_373KN_V2.sta",
+		"/C/Temp/abq_tmp/X4_IR_IT89_420KN_V2.sta",
+		"/C/Temp/abq_tmp/X4_IR_IT67_373KN_V2.sta",
+		"/C/Temp/abq_tmp/X4_IR_IT0_420KN_V2.sta",
+		"/H/Connect-skf.lnk",
+		"/C/Temp/abq_tmp/rotule_yoke_static_SSHISTORIQUE.dat",
+		"/C/Temp/abq_tmp/rotule_yoke_static_SSHISTORIQUE.log",
+		"/C/Temp/abq_tmp/Job-4.sta",
+		"/C/Temp/abq_tmp/Job-4.log",
+		"/C/Temp/abq_tmp/sertissage_3d_M1.dat",
+		"/C/Temp/abq_tmp/sertissage_3d_M1.sta",
+		"/C/Temp/abq_tmp/sertissage_3d_M1.log",
+		"//FRVALAS002/general$/admin/data/workstation/FRSVA5CB3410QM6.bat",
+		"/H/admin/data/user/BF6386.bat"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"coordsStep",
+			"ERROR",
+			"error",
+			"100 ",
+			"step",
+			"error",
+			"import",
+			"file_format",
+			"ERROR",
+			"error"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6357,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4473,
+								4473
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "materialDB_worplace.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
