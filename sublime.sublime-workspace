@@ -1,0 +1,195 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Google Drive/mycdr.img",
+		"/C/Users/alexandre/Documents/mdp.txt",
+		"/D/abq_tmp/bearing_stat_disp_V1.sta",
+		"/D/abq_tmp/bearing_stat_disp_V1.log",
+		"/C/Temp/bearing_stat_disp_V1.sta",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/update_licenses_db.sh",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/index.html",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/render_graphs.py",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/track_users_mysql.py",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/record_licenses.py",
+		"/C/Users/alexandre/Downloads/joint_du_01-08-2013_au_23-08-2013.ofc",
+		"//FREENAS/films/L'Ecole fantastique fr.srt",
+		"//FREENAS/films/L'Ecole fantastique  BR-Disk.srt",
+		"/C/SIMULIA/Abaqus/6.12-1/SMA/site/abaqus_v6.env",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/common.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/license_alert.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/config.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/license_cache.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/tools.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/license_util.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/generate_monitor.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/monitor.php",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/track_users.py",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/mysql/create_tables.sql",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/LicMonitor.py",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/query_users.py",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/raw_user_gen.py",
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/gislicenses.cron",
+		"/C/Users/alexandre/ownCloud/firewall.sh"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lmutil",
+			"lmutil_loc",
+			" /opt/license/arcgis/license10.0/bin/lmutil",
+			"Unknown error from 27000@localhost",
+			"get_flexlm",
+			"getde",
+			"getmessa",
+			"getDetails",
+			"writeLicense_Usage",
+			"muffleAlerts",
+			"alert_events",
+			"type"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "sublime.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
