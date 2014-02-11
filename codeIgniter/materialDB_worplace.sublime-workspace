@@ -3,16 +3,39 @@
 	{
 		"selected_items":
 		[
+			[
+				"instance",
+				"instanceList"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.php",
+			"file": "/Y/abaqusMacros.py",
 			"settings":
 			{
-				"buffer_size": 6357,
+				"buffer_size": 20814,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\"\"\"\nuserscript_cae_pre.py\n\nScript to include initial rotation  position of RE\n\nAuthor : Alexandre Aury SKF Aerospace\nVersion : 1.0\nDate : 10/02/2014\n\n\"\"\"\nfrom abaqus import *\n\ndef runUserScript(mdb, values):   \n	p=mdb.models['Model-1'].rootAssembly\n	a = p.instances\n	listInstance=[]\n	for instance in a.keys():\n		prefix=instance.split('-')[0]\n		if prefix=='Roller':\n			listInstance.append(instance)\n	p.rotate(instanceList=listInstance axisPoint=(0.0, 0.0, 0.0), \n        axisDirection=(0.0, 0.0, 1.0), angle=values['angleRotation'])",
+			"file": "/C/SIMULIA/abq_tmp/test_RE_OR/userscript_cae_pre.py",
+			"file_size": 558,
+			"file_write_time": 130365279666615982,
+			"settings":
+			{
+				"buffer_size": 531,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/c/temp/Rar$DRa0.459/userscript_cae_pre.py",
+			"settings":
+			{
+				"buffer_size": 421,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -43,6 +66,17 @@
 	},
 	"file_history":
 	[
+		"/C/Users/eb1445/Documents/workplace/github/CQM/jobAbqClass_simplifiee.py",
+		"/C/Users/eb1445/Documents/workplace/github/CQM/lancement_job_obj.py",
+		"/c/temp/Rar$DRa0.117/userscript_cae_pre.py",
+		"/C/SIMULIA/abq_tmp/X4/X4_OR_IT0_427KN_75deg.sta",
+		"/C/SIMULIA/abq_tmp/X4/X4_OR_IT24_427KN_75deg.sta",
+		"/C/SIMULIA/abq_tmp/X4/X4_OR_IT0_512KN_75deg.sta",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/application/config/autoload.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/application/config/config.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/application/config/database.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/index.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/.htaccess",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/.gitignore",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/.gitignore",
 		"/C/SIMULIA/abq_tmp/X4/lauch_calc.sh",
@@ -159,18 +193,7 @@
 		"//frvalas002/General$/admin/connect.bat",
 		"/C/Temp/abq_tmp/X4_IR_IT0_373KN_V2.sta",
 		"/C/Temp/abq_tmp/X4_IR_IT89_420KN_V2.sta",
-		"/C/Temp/abq_tmp/X4_IR_IT67_373KN_V2.sta",
-		"/C/Temp/abq_tmp/X4_IR_IT0_420KN_V2.sta",
-		"/H/Connect-skf.lnk",
-		"/C/Temp/abq_tmp/rotule_yoke_static_SSHISTORIQUE.dat",
-		"/C/Temp/abq_tmp/rotule_yoke_static_SSHISTORIQUE.log",
-		"/C/Temp/abq_tmp/Job-4.sta",
-		"/C/Temp/abq_tmp/Job-4.log",
-		"/C/Temp/abq_tmp/sertissage_3d_M1.dat",
-		"/C/Temp/abq_tmp/sertissage_3d_M1.sta",
-		"/C/Temp/abq_tmp/sertissage_3d_M1.log",
-		"//FRVALAS002/general$/admin/data/workstation/FRSVA5CB3410QM6.bat",
-		"/H/admin/data/user/BF6386.bat"
+		"/C/Temp/abq_tmp/X4_IR_IT67_373KN_V2.sta"
 	],
 	"find":
 	{
@@ -215,36 +238,93 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.php",
+					"file": "/Y/abaqusMacros.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6357,
+						"buffer_size": 20814,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4473,
-								4473
+								20570,
+								20811
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1620.0,
+						"translation.y": 6067.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/SIMULIA/abq_tmp/test_RE_OR/userscript_cae_pre.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 531,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								531,
+								531
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/c/temp/Rar$DRa0.459/userscript_cae_pre.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								421,
+								421
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
