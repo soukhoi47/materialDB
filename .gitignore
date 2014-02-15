@@ -225,3 +225,6 @@ framework/application/cache/*
 application/logs/*
 !framework/application/logs/index.html
 !framework/application/logs/.htaccess
+
+!*.sublime-project
+!*.sublime-workspace
