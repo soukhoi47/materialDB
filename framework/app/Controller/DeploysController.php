@@ -12,7 +12,7 @@ class PostsController extends AppController {
  
 	// The commands
 	$commands = array(
-		'cd /home/alexandre/Documents/materialDB'
+		'cd /home/alexandre/Documents/materialDB',
 		'echo $PWD',
 		'whoami',
 		'git pull',
