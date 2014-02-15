@@ -13,7 +13,7 @@ class DeploysController extends AppController {
 		// The commands
 		$commands = array(
 			'cd /home/alexandre/Documents/materialDB',
-			'echo $PWD',
+			/*'echo $PWD',*/
 			'whoami',
 			'git pull',
 			'git status',
