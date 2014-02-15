@@ -1,5 +1,5 @@
 <?php
-class PostsController extends AppController {
+class DepploysController extends AppController {
     public $helpers = array('Html', 'Form');
 
     public function index() {
