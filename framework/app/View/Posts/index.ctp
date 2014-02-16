@@ -1,15 +1,18 @@
 <!-- File: /app/View/Posts/index.ctp -->
 
 <h1>Blog posts</h1>
+<!-- ADD Post link -->
+<?php echo $this->Html->link(
+    'Add Post',
+    array('controller' => 'posts', 'action' => 'add')
+); ?>
 <table>
     <tr>
         <th>Id</th>
         <th>Titre</th>
         <th>Créé le</th>
     </tr>
-
     <!-- Here is where we loop through our $posts array, printing out post info -->
-
     <?php foreach ($posts as $post): ?>
     <tr>
         <td><?php echo $post['Post']['id']; ?></td>
