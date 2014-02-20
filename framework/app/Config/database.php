@@ -67,7 +67,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'monty',
 		'password' => 'alex',
-		'database' => 'dev_materialDB',
+		'database' => 'material',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);

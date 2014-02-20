@@ -3,15 +3,70 @@
 	{
 		"selected_items":
 		[
+			[
+				"model",
+				"modelName"
+			],
+			[
+				"load",
+				"loadCase"
+			],
+			[
+				"current",
+				"currentCase"
+			],
+			[
+				"angle",
+				"angleRotation"
+			],
+			[
+				"lst",
+				"lstInputFiles"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "framework/app/Model/Post.php",
+			"file": "/H/admin/AutoRun_svallierWF4_W7.bat",
 			"settings":
 			{
-				"buffer_size": 32,
+				"buffer_size": 2743,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/H/admin/connect_W7.bat",
+			"settings":
+			{
+				"buffer_size": 964,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/H/admin/def_repWF4_W7.bat",
+			"settings":
+			{
+				"buffer_size": 1194,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/H/admin/Configuration_StationWF4_W7.bat",
+			"settings":
+			{
+				"buffer_size": 5671,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "@echo on\n:	*************************************************\n:	\n:	**** .BAT ****\n:\n:	Script de demarrage station \n:\n:	Lancé par \"connect\" dans demarrage\n:\n:	Connexion necessaire a la CAO\n:\n:-----------------------------------------------------\n:\n: 13/09/06	RS	Modif des connexions reseaux par defaut\n:			ceux-ci devienent parametrable pour chaque division\n:\n: 15/07/09	RS	Valsrv05 devient FRVALAS002 alias VALPROI01:\n:\n: 15/11/10	RS	adaptation WF4M130 & ilink R3.4M070\n:\n: 07/06/11	RS	ajout test config ok\n:\n:	*************************************************\n\nset CFG_VERIF=c:\\cfg_ws_ok.log\n\nset CFG_ADMIN_DIR=\\\\frvalas002\\general$\\admin\n\nif exist %CFG_VERIF% del %CFG_VERIF%\n\necho == connexions pour ==%DIVISION%== ==\n\n:s0\n:\n: ==== Verification connexion GENERAL\n: \n\nnet use h: /DELETE /YES\nnet use h: \\\\frvalas002\\General$ /PERSISTENT:YES\n\n\n: Mise a zero\n:\nnet use e: /DELETE\nnet use f: /DELETE\nnet use g: /DELETE\nnet use l: /DELETE\n\ngoto cconnect-%DIVISION%\n\n\n: --> par defaut\n:\n:cconnect-\n:\nnet use e: \\\\frvalas002\\Bielles$ /PERSISTENT:YES\nnet use f: \\\\frvalas002\\Roulements$ /PERSISTENT:YES\nnet use g: \\\\frvalas002\\Systemes$ /PERSISTENT:YES\ngoto s6\n\n\n: --> Division BIELLES\n:\n:cconnect-BIELLES\n:\nnet use e: \\\\frvalas002\\Bielles$ /PERSISTENT:YES\ngoto s6\n\n\n: --> Division ROULEMENTS\n:\n:cconnect-ROULEMENTS\n:\nnet use f: \\\\frvalas002\\Roulements$ /PERSISTENT:YES\ngoto s6\n\n\n: --> Division Fly-by-Wire\n:\n:cconnect-SYSTEMES\n:cconnect-FLY-BY-WIRE\n:\nnet use f: \\\\w0375\\Fly-by-Wire /PERSISTENT:YES\nnet use g: \\\\frvalas002\\Systemes$ /PERSISTENT:YES\nnet use t: \\\\w0375\\Transfert /PERSISTENT:YES\ngoto s6\n\n\n:s6\n\nrem pause\n\n:\n: ==== definition repertoire\n:\ncopy %CFG_ADMIN_DIR%\\def_repWF4_W7.bat %systemdrive%\\def_repWF4_W7.bat\nif not exist %systemdrive%\\def_repWF4.bat goto grosseerreur\ncall %systemdrive%\\def_repWF4.bat\n\n\n:s7\n:\n: ==== Verification BANZAI\n: \ncd /D %reputilitaires%\ncall verification_banzai.bat\n\n:\n: ==== Lancement configuration station & Intralink\n: \n:vdeb\ncd /D %repcfg%\ncall configuration_stationWF4_W7.bat ok\n\nif not exist %CFG_VERIF% goto grosseerreur2\n\n:\n: ==== Lancement INTRALINK\n:\n\n:il_lct\ncall %rep_ilink%\\bin\\SKF_proi_startup.bat\n\ngoto fin\n\n:grosseerreur\nnet send %COMPUTERNAME% Probleme de configuration des repertoires : APPELER LE RESPONSABLE CAO\necho.\necho %COMPUTERNAME% Probleme de configuration des repertoires : APPELER LE RESPONSABLE CAO\necho.\npause\ngoto fin\n\n:grosseerreur\nnet send %COMPUTERNAME% la configuration n'est pas effectuee correctement : APPELER LE RESPONSABLE CAO\necho.\necho %COMPUTERNAME% Probleme de configuration des repertoires : APPELER LE RESPONSABLE CAO\necho.\npause\ngoto fin\n\n\n:fin\npause\nrem start %repcfg%\\Info_WILDFIRE2.htm\n\nrem call %repappli%\\start_noel.bat\n\nrem start %repcfg%\\info2002.htm\n\n",
+			"file": "/C/PTC/AutoRun_svallierWF4.bat",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 2743,
 				"line_ending": "Windows"
 			}
 		}
@@ -64,6 +119,102 @@
 	},
 	"file_history":
 	[
+		"/C/PTC/AutoRun_svallierWF4.bat",
+		"//frvalas002/General$/admin/connect.bat",
+		"/C/def_repWF4.bat",
+		"/H/admin/proe/maj_pro.bat",
+		"/H/admin/ilink/maj_ilink_W7.bat",
+		"/H/admin/ilink/add-on/client_W7/bin/SKF_proi_startup.bat",
+		"/H/admin/ilink/add-on/client_W7/bin/proilinkrelease_3.4.lns.bat",
+		"/H/admin/ilink/add-on/client_W7/bin/proilinkrelease_3.4.bat",
+		"/H/admin/ilink/add-on/client_W7/bin/SKF_proi_startup_lns.bat",
+		"/H/admin/def_repWF4.bat",
+		"/H/admin/ilink/add-on/client/bin/SKF_proi_startup.bat",
+		"/H/admin/ilink/add-on/client/bin/proilinkrelease_3.4.lns.bat",
+		"/H/admin/ilink/add-on/client/bin/SKF_proi_startup_lns.bat",
+		"/H/admin/ilink/add-on/client/bin/proilinkrelease_3.4.bat",
+		"/H/admin/connect.bat",
+		"/H/admin/Configuration_StationWF4.bat",
+		"/H/admin/AutoRun_svallierWF4.bat",
+		"/H/admin/ilink/maj_ilink.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.lns.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proi_startup.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proi_startup_lns.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/tnsnames.ora",
+		"/H/admin/def_repWF4_W7.bat",
+		"/H/admin/connect_W7.bat",
+		"/C/PTC/ProEngineer/WF4M130/bin/Machining.psf",
+		"/C/PTC/ProEngineer/WF4M130/bin/Default.psf",
+		"/C/PTC/ProEngineer/WF4M130/bin/ncpost.bat",
+		"/C/PTC/ProEngineer/WF4M130/bin/Flex3C.psf",
+		"/C/PTC/start_admin_init_intralink.bat",
+		"/C/PTC/start_vericut.bat",
+		"/C/PTC/start_pcat.bat",
+		"/C/PTC/start_borrow.bat",
+		"/C/PTC/start_bz.bat",
+		"/C/PTC/start_cfg.bat",
+		"/C/PTC/start_excelfbw1.bat",
+		"/C/PTC/start_intralink_lons.bat",
+		"/C/PTC/start_intralink_svallier.bat",
+		"/C/PTC/start_ldbcompact.bat",
+		"/C/PTC/start_ncp.bat",
+		"/C/PTC/start_noel.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/Default_with_ProI.psf",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/Default_with_ProI.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proe_startup.bat",
+		"/C/Users/eb1445/Desktop/ProI configurations for Win7/Default_with_ProI.bat",
+		"/C/Users/eb1445/Desktop/ProI configurations for Win7/proilinkrelease_3.4.bat",
+		"/C/Users/eb1445/Desktop/ProI configurations for Win7/SKF_proe_startup.bat",
+		"/C/Users/eb1445/Desktop/ProI configurations for Win7/SKF_proi_startup.bat",
+		"/C/Users/eb1445/Desktop/ProI configurations for Win7/Default_with_ProI.psf",
+		"/C/SIMULIA/abq_tmp/AGB NG/userscript_cae_pre.py",
+		"/Y/abaqusMacros.py",
+		"/C/SIMULIA/abq_tmp/AGB NG/abaqusMacros.py",
+		"/C/Users/eb1445/Desktop/tnsnames.ora",
+		"/C/SIMULIA/abq_tmp/AGB NG/abaqusMacros.old.py",
+		"/C/SIMULIA/abq_tmp/AGB NG/preProMacro_ACBB_mono.py",
+		"/C/SIMULIA/abq_tmp/AGB NG/__init__.py",
+		"/C/SIMULIA/abq_tmp/AGB NG/abaqusMacro.py",
+		"/Z/11 - Tool Development/03-Programs/00-Support calcul/13058-X4 - MAST rotor bearing/Calculation Files & Macro/Results/parametric study/preloadTest.var",
+		"/Z/11 - Tool Development/03-Programs/00-Support calcul/13058-X4 - MAST rotor bearing/Calculation Files & Macro/Results/parametric study/X4_paramStudy.psf",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_4/ACBB_mono_test.sta",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_3/ACBB_mono_test.sta",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_2/ACBB_mono_test.sta",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/ACBB_mono_test_3.sta",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_2/errors.txt",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/ACBB_mono_test.sta",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/errors.txt",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/execInp.py",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/cmd.bat",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/iSIGHT_FD_cmd.bat",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/ACBB_mono_test.sta",
+		"/C/SIMULIA/abq_tmp/AGB NG/casDOE.txt",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/errors.txt",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/casDOE_1.txt",
+		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/casDOE_0.txt",
+		"/C/SIMULIA/abq_tmp/AGB NG/export_casDOE.txt",
+		"/C/SIMULIA/abq_tmp/AGB NG/casDOE.csv",
+		"/C/SIMULIA/abq_tmp/module_precisionDisplayParts.py",
+		"/Y/abaqusMacros_save.py",
+		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/[Isight] OR model with RE set/userscript_cae_pre.py",
+		"/C/SIMULIA/abq_tmp/CESA/userscript_odb.py",
+		"/C/SIMULIA/abq_tmp/X4/report_raceway_def_OR.rpt",
+		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/13058-X4 - MAST rotor bearing/Reports/report_raceway_def_IR.rpt",
+		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/13058-X4 - MAST rotor bearing/Reports/report_raceway_def_OR.rpt",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Post.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/index.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/PostsController.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/edit.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/view.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/add.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/DeploysController.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Deploy.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Deploys/index.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/deploy.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/deploy.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/deplay.php",
+		"/C/Users/eb1445/AppData/Roaming/Sublime Text 3/Packages/Emmet/Default (Windows).sublime-keymap",
 		"/D/Users/Alexandre/Documents/GitHub/materialDB/framework/app/Config/core.php",
 		"/D/Users/Alexandre/Documents/GitHub/materialDB/framework/app/Config/database.php",
 		"/D/Users/Alexandre/Documents/GitHub/materialDB/framework/.gitignore",
@@ -95,8 +246,7 @@
 		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/LicMonitor.py",
 		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/query_users.py",
 		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/raw_user_gen.py",
-		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/gislicenses.cron",
-		"/C/Users/alexandre/ownCloud/firewall.sh"
+		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/gislicenses.cron"
 	],
 	"find":
 	{
@@ -114,6 +264,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"M130",
+			"ProEngineer",
+			",",
+			";",
+			"string",
+			"expand",
 			"lmutil",
 			"lmutil_loc",
 			" /opt/license/arcgis/license10.0/bin/lmutil",
@@ -133,6 +289,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"M220",
+			".",
+			",",
+			"lorem10"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -143,32 +303,144 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "framework/app/Model/Post.php",
+					"file": "/H/admin/AutoRun_svallierWF4_W7.bat",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32,
+						"buffer_size": 2743,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								32,
-								32
+								1601,
+								1601
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 970.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/H/admin/connect_W7.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/H/admin/def_repWF4_W7.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1193,
+								1193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/H/admin/Configuration_StationWF4_W7.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4296,
+								4296
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1912.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/PTC/AutoRun_svallierWF4.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1613,
+								1613
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 1125.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -183,7 +455,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -215,7 +487,7 @@
 	"project": "sublime.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -249,7 +521,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 191.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
