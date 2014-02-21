@@ -7,12 +7,12 @@ App::uses('AppModel', 'Model');
  */
 class Product extends AppModel {
 
-*
+/**
  * Use database config
  *
  * @var string
- 
-	public $useDbConfig = 'default';
+ */
+	// public $useDbConfig = 'default';
 
 /**
  * Primary key field
