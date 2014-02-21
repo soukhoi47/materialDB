@@ -22,23 +22,6 @@
                 );
             ?>
         </td>
-        <td>
-            <?php
-                echo $this->Form->postLink(
-                    'Delete',
-                    array('action' => 'delete', $product['product']['id']),
-                    array('confirm' => 'Are you sure?')
-                );
-            ?>
-            <?php
-                echo $this->Html->link(
-                    'Edit', array('action' => 'edit', $product['product']['id'])
-                );
-            ?>
-        </td>
-        <td>
-            <?php echo $product['product']['created']; ?>
-        </td>
     </tr>
     <?php endforeach; ?>
 
