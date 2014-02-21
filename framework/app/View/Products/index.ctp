@@ -14,14 +14,6 @@
     <?php foreach ($product as $product): ?>
     <tr>
         <td><?php echo $product['product']['id']; ?></td>
-        <td>
-            <?php
-                echo $this->Html->link(
-                    $product['product']['title'],
-                    array('action' => 'view', $product['product']['id'])
-                );
-            ?>
-        </td>
     </tr>
     <?php endforeach; ?>
 
