@@ -16,6 +16,6 @@ class Product extends AppModel {
 			'unique' => 'keepExisting',
 		)
 	);
-
-	public $actAs = array('Containable');
+	public $recursive = -1;
+	public $actsAs = array('Containable');
 }

@@ -12,7 +12,9 @@ class ProductsController extends AppController {
             throw new NotFoundException(__('Invalid post'));
         }
 
+        $this->Product->contain('Property')
         $product = $this->Product->findById($id);
+        debug($product): die();
         if (!$product) {
             throw new NotFoundException(__('Invalid post'));
         }
