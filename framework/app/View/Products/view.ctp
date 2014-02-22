@@ -4,7 +4,7 @@
 
 <p><small>Created: <?php echo $product['Product']['created']; ?></small></p>
 
-<strong>Properties:</strong>
+<p><strong>Properties:</strong></p>
 
 <table>
     <tr>
