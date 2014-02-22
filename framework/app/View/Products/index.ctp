@@ -12,7 +12,7 @@
     <tr>
         <td><?php echo $Product['Product']['id']; ?></td>
         <td>
-            <?php echo $this->Html->link($Product['Product']['title'],
+            <?php echo $this->Html->link($Product['Product']['name'],
 array('controller' => 'Products', 'action' => 'view', $Product['Product']['id'])); ?>
         </td>
         <td><?php echo $Product['Product']['created']; ?></td>

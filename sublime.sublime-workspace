@@ -31,7 +31,31 @@
 			"file": "framework/app/Config/database.php",
 			"settings":
 			{
-				"buffer_size": 2946,
+				"buffer_size": 2976,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "framework/app/Controller/ProductsController.php",
+			"settings":
+			{
+				"buffer_size": 242,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "framework/app/Model/Product.php",
+			"settings":
+			{
+				"buffer_size": 134,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "framework/app/View/Products/index.ctp",
+			"settings":
+			{
+				"buffer_size": 642,
 				"line_ending": "Windows"
 			}
 		}
@@ -85,6 +109,12 @@
 	"file_history":
 	[
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Post.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Product.php.old.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Test/Case/Model/ProductTest.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/index.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/PostsController.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Config/database.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Property.php",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/add.ctp",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/edit.ctp",
 		"/C/PTC/AutoRun_svallierWF4.bat",
@@ -172,8 +202,6 @@
 		"/C/SIMULIA/abq_tmp/X4/report_raceway_def_OR.rpt",
 		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/13058-X4 - MAST rotor bearing/Reports/report_raceway_def_IR.rpt",
 		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/13058-X4 - MAST rotor bearing/Reports/report_raceway_def_OR.rpt",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/index.ctp",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/PostsController.php",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/view.ctp",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/DeploysController.php",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Deploy.php",
@@ -207,11 +235,7 @@
 		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/tools.php",
 		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/license_util.php",
 		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/generate_monitor.php",
-		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/monitor.php",
-		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/monitor/track_users.py",
-		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/mysql/create_tables.sql",
-		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/LicMonitor.py",
-		"/C/Users/alexandre/Documents/workspaces/gitHub/FlexLM-License-Monitor/query_users.py"
+		"/C/Users/alexandre/Documents/workspaces/gitHub/phplicensewatcher/monitor.php"
 	],
 	"find":
 	{
@@ -229,6 +253,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"test",
+			"post",
 			"M130",
 			"ProEngineer",
 			",",
@@ -254,6 +280,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Product",
 			"M220",
 			".",
 			",",
@@ -268,7 +295,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -277,15 +304,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2946,
+						"buffer_size": 2976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2867,
-								2867
+								2400,
+								2400
 							]
 						],
 						"settings":
@@ -294,7 +321,96 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 630.0,
+						"translation.y": 675.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "framework/app/Controller/ProductsController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "framework/app/Model/Product.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								131,
+								131
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "framework/app/View/Products/index.ctp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								402,
+								402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
