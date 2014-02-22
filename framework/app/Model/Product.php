@@ -14,7 +14,7 @@ class Product extends AppModel {
 			'foreignKey' => 'products_ID',
 			'associationForeignKey' => 'properties_ID',
 			'unique' => 'keepExisting',
-			'conditions' => 'products_ID="Product"',
+			// 'conditions' => 'products_ID="Product"',
 		)
 	);
 
