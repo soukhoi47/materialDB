@@ -14,11 +14,12 @@ class ProductsController extends AppController {
 
         $this->Product->contain('Property');
         $product = $this->Product->findById($id);
-        $product['Property']=$Properties;
+        $product['Property']=$properties;
         if (!$product) {
             throw new NotFoundException(__('Invalid post'));
         }
         $this->set('product', $product);
+        $this->set('properties', $properties);
     }
 
 }

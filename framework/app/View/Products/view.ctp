@@ -13,14 +13,14 @@
         <th>Unit</th>
     </tr>
 
-    <!-- Here is where we loop through our $Products array, printing out Product info -->
+    <!-- Here is where we loop through our $Properties array, printing out Product properties info -->
 
-    <?php foreach ($Properties as $Property): ?>
+    <?php foreach ($properties as $property): ?>
     <tr>
-        <td><?php echo $Property['name']; ?> [<?php echo $Property['symbol']; ?>]</td>
-        <td><?php echo $Property['ProductsProperty']['valeur']; ?></td>
-        <td><?php echo $Property['unit']; ?></td>
+        <td><?php echo $property['name']; ?> [<?php echo $property['symbol']; ?>]</td>
+        <td><?php echo $property['ProductsProperty']['valeur']; ?></td>
+        <td><?php echo $property['unit']; ?></td>
     </tr>
     <?php endforeach; ?>
-    <?php unset($Product); ?>
+    <?php unset($Properties); ?>
 </table>
