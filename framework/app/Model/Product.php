@@ -14,9 +14,8 @@ class Product extends AppModel {
 			'foreignKey' => 'products_ID',
 			'associationForeignKey' => 'properties_ID',
 			'unique' => 'keepExisting',
-			// 'conditions' => 'products_ID="Product"',
 		)
 	);
 
-	public $actAs = array('contanable');
+	public $actAs = array('Containable');
 }
