@@ -18,5 +18,5 @@ class Product extends AppModel {
 		)
 	);
 
-	public $actAs = array('contanable';)
+	public $actAs = array('contanable');
 }
