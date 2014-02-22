@@ -4,7 +4,7 @@ class ProductsController extends AppController {
 /*Index controller listing all Products*/
     public function index() {
         $this->set('Products', $this->Product->find('all'));
-        debug($Product);
+        debug($this);
         die();
     }
 
