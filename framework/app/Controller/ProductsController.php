@@ -14,7 +14,7 @@ class ProductsController extends AppController {
 
         $this->Product->contain('Property');
         $product = $this->Product->findById($id);
-        debug($product); die();
+        $product['Property']=$Properties;
         if (!$product) {
             throw new NotFoundException(__('Invalid post'));
         }

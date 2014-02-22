@@ -4,6 +4,8 @@
 
 <p><small>Created: <?php echo $product['Product']['created']; ?></small></p>
 
+<strong>Properties:</strong>
+
 <table>
     <tr>
         <th>Property</th>
@@ -13,11 +15,11 @@
 
     <!-- Here is where we loop through our $Products array, printing out Product info -->
 
-    <?php foreach ($Products as $Product): ?>
+    <?php foreach ($Properties as $Property): ?>
     <tr>
-        <td><?php echo $Product['Product']['Property']['name']; ?> [<?php echo $Product['Product']['Property']['symbol']; ?>]</td>
-        <td><?php echo $Product['Product']['Property']['ProductsProperty']['valeur']; ?></td>
-        <td><?php echo $Product['Product']['Property']['unit']; ?></td>
+        <td><?php echo $Property['name']; ?> [<?php echo $Property['symbol']; ?>]</td>
+        <td><?php echo $Property['ProductsProperty']['valeur']; ?></td>
+        <td><?php echo $Property['unit']; ?></td>
     </tr>
     <?php endforeach; ?>
     <?php unset($Product); ?>
