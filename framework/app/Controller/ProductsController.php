@@ -16,10 +16,17 @@ class ProductsController extends AppController {
         $product = $this->Product->findById($id);
         $properties=$product['Property'];
         if (!$product) {
-            throw new NotFoundException(__('Invalid post'));
+            throw new NotFoundException(__('Invalid product'));
         }
         $this->set('product', $product);
         $this->set('properties', $properties);
     }
 
+    function addProperty($id = null) {
+        $this->loadModel('Property');
+        $this->Property->contain('Property');
+        $properties=$this->Property->find('all')
+        $this->set('properties', $properties);
+        debug($properties); die();
+    }
 }

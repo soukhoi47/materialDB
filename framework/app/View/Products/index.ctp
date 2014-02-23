@@ -1,3 +1,4 @@
+<!-- File: /app/View/Products/index.ctp -->
 <h1>Blog Products</h1>
 <table>
     <tr>
