@@ -11,8 +11,8 @@ class Product extends AppModel {
 		'Property' => array(
 			'className' => 'Property',
 			'joinTable' => 'products_properties',
-			'foreignKey' => 'products_ID',
-			'associationForeignKey' => 'properties_ID',
+			'foreignKey' => 'product_id',
+			'associationForeignKey' => 'property_id',
 			'unique' => 'keepExisting',
 		)
 	);

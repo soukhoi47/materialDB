@@ -4,8 +4,6 @@
 
 <p><small>Created: <?php echo $product['Product']['created']; ?></small></p>
 
-<p><strong>Properties:</strong></p>
-
 <table>
     <tr>
         <th>Property</th>
@@ -17,7 +15,7 @@
 
     <?php foreach ($properties as $property): ?>
     <tr>
-        <td><?php echo $property['name']; ?> [<?php echo $property['symbol']; ?>]</td>
+        <td><?php echo $property['name']; ?> <strong>[<?php echo $property['symbol']; ?>]</strong></td>
         <td><?php echo $property['ProductsProperty']['valeur']; ?></td>
         <td><?php echo $property['unit']; ?></td>
     </tr>
