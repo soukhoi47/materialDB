@@ -24,6 +24,7 @@ class ProductsController extends AppController {
 
     public function addProperty($id = null) {
         $d['Properties']=$this->Product->Property->find('list');
+        debug($d['Properties']);
         $this->set($d);
     }
 }
