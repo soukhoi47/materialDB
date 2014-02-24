@@ -13,19 +13,18 @@ class ProductsController extends AppController {
         }
 
         $this->Product->contain('Property');
-        $product = $this->Product->findById($id);
-        $properties=$product['Property'];
-        if (!$product) {
+        $d = $this->Product->findById($id);
+        if (!$d['Product']) {
             throw new NotFoundException(__('Invalid product'));
         }
-        $this->set('product', $product);
-        $this->set('properties', $properties);
+        debug($d);
+        $this->set('d',$d);
     }
 
     public function addProperty($id = null) {
-        $d['Properties']=$this->Product->Property->find('list');
-        debug($d['Properties']);
+        $d['properties']=$this->Product->Property->find('list');
         $this->set($d);
     }
+
 }
 
