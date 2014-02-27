@@ -8,4 +8,7 @@ class Post extends AppModel {
             'rule' => 'notEmpty'
         )
     );
+
+    public $recursive = -1;
+    public $actsAs = array('Containable','Taxonomy.Taxonomy');
 }

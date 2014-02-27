@@ -10,8 +10,9 @@ class PostsController extends AppController {
         if (!$id) {
             throw new NotFoundException(__('Invalid post'));
         }
-
+        $this->Post->contain('Term');
         $post = $this->Post->findById($id);
+        debug($post); die();
         if (!$post) {
             throw new NotFoundException(__('Invalid post'));
         }

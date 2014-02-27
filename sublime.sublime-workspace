@@ -28,11 +28,22 @@
 	"buffers":
 	[
 		{
-			"file": "/Y/abaqusMacros.py",
+			"contents": "@echo off\n\nrem : 26/02/2014  AA  WF4   adaptation WF4 M220 + Ilink R3.4 M070 + Migration W7\n\n\nset MC=unset\nif \"%PROCESSOR%\" == \"INTEL_486\" set MC=i486_nt\nif \"%PROCESSOR_ARCHITECTURE%\" == \"AMD64\" set MC=i486_nt\nif \"%PROCESSOR_ARCHITECTURE%\" == \"x86\" set MC=i486_nt\nif not \"%MC%\" == \"unset\" goto mc_done\necho ERROR Cannot detect what machine type you have.\necho Please make one of the following settings:\necho.\necho set PROCESSOR=INTEL_486     - For Windows NT Intel based machines.\necho.\necho set PROCESSOR=INTEL_64      - For Windows Intel Itanium based machines.\necho.\nexit\n:mc_done\n\nset PRO_MACHINE_TYPE=%MC%\n\nif \"%PROOBJ_START_DIRECTORY%\" == \"\" set PRO_DIRECTORY=\nif NOT \"%PRO_DIRECTORY%\" == \"\" \"%PRO_DIRECTORY%\\bin\\%MC%_ptc_setvars\" %0 \"proilinkrelease_3.4.lns\" bat\nif \"%PRO_DIRECTORY%\" == \"\" %MC%_ptc_setvars %0 \"proilinkrelease_3.4.lns\" bat\ncall ptc_setvars.bat\ndel  ptc_setvars.bat\n\nset start_cmd=start \"\"\n\nset PRO_DIRECTORY=%PRODIR%\nif NOT \"%PTCPATH%\" == \"\" goto ptcpathset\n\nset path=%PRO_DIRECTORY%\\bin;%path%\n\nset PTCPATH=true\n:ptcpathset\n\n\nREM ptc-cmdtype: ilink\n\nset INTRALINK_DIR=%PRO_DIRECTORY%\n\nif NOT \"%PDM_LDB_PATH%\" == \"\" goto pdmldbpathset\n  if \"%HOMEDRIVE%\" == \"\" goto pdmldbpathset\n    if \"%HOMEPATH%\" == \"\" goto pdmldbpathset\n      set PDM_LDB_PATH=%HOMEDRIVE%%HOMEPATH%\n:pdmldbpathset\n\nset intralinkparams=\"\"\n:aloop\nif \"%1\" == \"\" goto bkloop\nif NOT \"%1\" == \"--\" goto doloop\n  shift\n  set intralinkparams=%1 %2 %3 %4 %5 %6 %7 %8 %9\n:doloop\n  shift\n  goto aloop\n:bkloop\n\nset logfile=\".proi.log\"\nif [%E2%]==[] set E2=0\nif [%E1%]==[] set E1=0\nif [%E0%]==[] set E0=0\nset E2=0\nset E1=0\nset E0=0\n:bloop\n:E0\nif %E0%==9 goto E1\nif %E0%==8 set E0=9\nif %E0%==7 set E0=8\nif %E0%==6 set E0=7\nif %E0%==5 set E0=6\nif %E0%==4 set E0=5\nif %E0%==3 set E0=4\nif %E0%==2 set E0=3\nif %E0%==1 set E0=2\nif %E0%==0 set E0=1\ngoto edone\n:E1\nset E0=0\nif %E1%==9 goto E2\nif %E1%==8 set E1=9\nif %E1%==7 set E1=8\nif %E1%==6 set E1=7\nif %E1%==5 set E1=6\nif %E1%==4 set E1=5\nif %E1%==3 set E1=4\nif %E1%==2 set E1=3\nif %E1%==1 set E1=2\nif %E1%==0 set E1=1\ngoto edone\n:E2\nset E1=0\nif %E2%==9 set E2=0\nif %E2%==8 set E2=9\nif %E2%==7 set E2=8\nif %E2%==6 set E2=7\nif %E2%==5 set E2=6\nif %E2%==4 set E2=5\nif %E2%==3 set E2=4\nif %E2%==2 set E2=3\nif %E2%==1 set E2=2\nif %E2%==0 set E2=1\nREM goto E0\n:edone\nif %E2%==0 goto et1\nset count=%E2%%E1%%E0%\ngoto et\n:et1\nif %E1%==0 goto et0\nset count=%E1%%E0%\ngoto et\n:et0\nset count=%E0%\n:et\nset logfile=\".proi.log.%count%\"\nif EXIST \"%logfile%\" goto d2loop\ngoto bzloop\n:d2loop\ngoto bloop\n:bzloop\n\nset PTC_JRE=%prodir%\\%mc%\\jre\nset JAVA_HOME=%prodir%\\%mc%\\jre\n\nset path=%PRO_DIRECTORY%\\%mc%\\lib;%PRO_DIRECTORY%\\%mc%\\obj;%path%\n\nset PROE_DIR=C:\\PTC\\ProEngineer\\WF4M220\nset PDM_IMPEX_PATH=%PROE_DIR%\\bin\\mdimpex.bat\nset PDM_MDIMPEX_PATH=%PDM_IMPEX_PATH% -connect apdmpi_dll.dll\n\nset proe_mc=%mc%\nif EXIST %PROE_DIR%\\%proe_mc%\\obj\\loadinpro.exe goto fbskp\nset proe_mc=x86e_win64\nif EXIST %PROE_DIR%\\%proe_mc%\\obj\\loadinpro.exe goto fbskp\nset proe_mc=i486_nt\n:fbskp\n\nset PDM_LOADINPRO_PATH=%PROE_DIR%\\%proe_mc%\\obj\\loadinpro.exe\n\nset PROE_START=proe.exe\nset PROE_STARTUP_EXE=__PROE_STARTUP_EXE__\nset PROE_STARTUP_PSF=__PROE_STARTUP_PSF__\nif \"%PROE_DIR%\" == \"\" goto prd1\n  if \"%PROE_DIR%\" == \"__PROE_DIR__\" goto prd2\n    set pes=%PROE_START%\n    set PROE_START=%PROE_DIR%\\bin\\%pes%\n    goto prd1\n:prd2\n:prd1\nif \"%PROE_START%\" == \"\" goto pastps\nset PDM_PROE=%PROE_START%\nset PDM_PROE_PATH=%PDM_PROE%\n:pastps\n\n\nif \"%PTCNMSPORT%\" == \"\" set PTCNMSPORT=1239\n\"%prodir%\\%mc%\\nms\\nmsq.exe\" -quiet -ping\nif \"%NMSD_TIMEOUT%\" == \"\" set NMSD_TIMEOUT=300\nif ERRORLEVEL 1 %start_cmd% /min \"%PRO_DIRECTORY%\\%MC%\\nms\\nmsd.exe\" -noservice -timeout %NMSD_TIMEOUT%\n\n\nset PDM_ORA_APPL=intralink\nset PDM_ORACLE_SERVER=LNSPROI01\nset TNS_ADMIN=%prodir%\n\nset ORACLE_HOME=%prodir%\\%mc%\\obj\\ORACLE10203\nset EPC_DISABLED=TRUE\nset path=%ORACLE_HOME%\\bin;%path%\n\nif NOT \"%PTC_D_LICENSE_FILE%\" == \"\" set PTC_D_LICENSE_FILE=7788@skflic01.skf.net;7788@skflic02.skf.net;%PTC_D_LICENSE_FILE%\nif \"%PTC_D_LICENSE_FILE%\" == \"\" set PTC_D_LICENSE_FILE=7788@skflic01.skf.net;7788@skflic02.skf.net\nset ILINK_CLIENT_FEATURE_NAME=ILINK_CLIENT_License ()\n\nif \"%PROE_DIR%\" == \"\" goto pimsg\nset PRO_COMM_MSG_EXE=%PROE_DIR%\\%proe_mc%\\obj\\pro_comm_msg\ngoto pstmsg\n:pimsg\nset PRO_COMM_MSG_EXE=%prodir%\\%mc%\\obj\\pro_comm_msg\n:pstmsg\n\nset NAME_SERVICE_EXE=%prodir%\\%mc%\\obj\\name_service\n\nif EXIST \"%prodir%\\%mc%\\obj\\pdm_edit_copy.exe\" set PDM_ED_CP_PATH=%prodir%\\%mc%\\obj\\pdm_edit_copy.exe\n\nif EXIST \"%prodir%\\install\\nt\\docmgr_loc.bat\" call \"%prodir%\\install\\nt\\docmgr_loc.bat\"\n\nif NOT \"%PRO_TEMPLATES%\" == \"\" goto pstemp\nset PRO_TEMPLATES=%prodir%\\pdm\\templates\n:pstemp\nset EPC_DISABLE=TRUE\n\nif EXIST \"%prodir%\\rsexplorer.ini\" set RSDB_INI_FILE=%prodir%\\rsexplorer.ini\n\nif exist \"%PRO_DIRECTORY%\\ptc_startup.bat\" call \"%PRO_DIRECTORY%\\ptc_startup.bat\"\nif exist \"%HOMEDRIVE%\\%HOMEPATH%\\ptc_startup.bat\" call \"%HOMEDRIVE%\\%HOMEPATH%\\ptc_startup.bat\"\nif exist \".\\ptc_startup.bat\" call \".\\ptc_startup.bat\"\n\nrem start /B %prodir%\\%mc%\\jre\\bin\\javaw -Xmx256m -Xss8m -jar %PRO_DIRECTORY%\\java\\lib\\Intralink.jar -l %luknfeel% %intralinkparams% >> \"%logfile%\"\n\nstart /B %prodir%\\%mc%\\jre\\bin\\javaw -Dswing.useSystemFontSettings=false -Xmx256m -Xss8m -Dsun.java2d.noddraw=true -jar %PRO_DIRECTORY%\\java\\lib\\Intralink.jar -l %luknfeel% %intralinkparams% >> \"%logfile%\"\n\n\nstart /B %prodir%\\%mc%\\jre\\bin\\javaw -Dswing.useSystemFontSettings=false -Xmx256m -Xss8m -Dsun.java2d.noddraw=true -jar %PRO_DIRECTORY%\\java\\lib\\Intralink.jar -l %luknfeel% %intralinkparams% >> “%logfile%” \n\n:ptc_end\nexit /B %ERRORLEVEL%\n",
+			"file": "/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.lns.bat",
+			"file_size": 5565,
+			"file_write_time": 130379785391798456,
 			"settings":
 			{
-				"buffer_size": 22781,
-				"line_ending": "Unix"
+				"buffer_size": 5566,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.bat",
+			"settings":
+			{
+				"buffer_size": 5349,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -43,7 +54,15 @@
 		"selected_items":
 		[
 			[
+				"liverelo",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
 				"livereload",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"livere",
 				"LiveReload: Enable/disable plug-ins"
 			],
 			[
@@ -92,22 +111,84 @@
 	},
 	"file_history":
 	[
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/PostsController.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Products/add_property.ctp",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/ProductsController.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Product.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Property.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Config/bootstrap.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Post.php",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.bat",
+		"/C/SIMULIA/abq_tmp/A320Neo/CFM/CFM_492kN_V2_lin_MatVerif.inp",
+		"/H/admin_W7/win/add-on/cde/start_vericut.bat",
+		"/H/admin_W7/win/add-on/cde/start_admin_init_intralink.bat",
+		"/H/admin_W7/win/add-on/cde/start_borrow.bat",
+		"/H/admin_W7/win/add-on/cde/start_bz.bat",
+		"/H/admin_W7/win/add-on/cde/start_cfg.bat",
+		"/H/admin_W7/win/add-on/cde/start_excelfbw1.bat",
+		"/H/admin_W7/win/add-on/cde/start_intralink_lons.bat",
+		"/H/admin_W7/win/add-on/cde/start_intralink_svallier.bat",
+		"/H/admin_W7/win/add-on/cde/start_ldbcompact.bat",
+		"/H/admin_W7/win/add-on/cde/start_ncp.bat",
+		"/H/admin_W7/win/add-on/cde/start_noel.bat",
+		"/H/admin_W7/win/add-on/cde/start_pcat.bat",
+		"/C/PTC/start_admin_init_intralink.bat",
+		"/C/PTC/start_borrow.bat",
+		"/C/PTC/start_bz.bat",
+		"/C/PTC/start_cfg.bat",
+		"/C/PTC/start_excelfbw1.bat",
+		"/C/PTC/start_intralink_lons.bat",
+		"/C/PTC/start_intralink_svallier.bat",
+		"/C/PTC/start_ldbcompact.bat",
+		"/C/PTC/start_ncp.bat",
+		"/C/PTC/start_noel.bat",
+		"/C/PTC/start_pcat.bat",
+		"/C/PTC/start_vericut.bat",
+		"/C/PTC/AutoRun_svallierWF4.bat",
+		"/H/admin_W7/proe/add-on/cde/Flex3C.psf",
+		"/H/admin_W7/proe/add-on/cde/Machining.psf",
+		"/H/admin_W7/proe/add-on/cde/Default.psf",
+		"/C/PTC/ProEngineer/WF4M220/bin/Default.psf",
+		"/C/PTC/ProEngineer/WF4M220/bin/Default_with_ProI.psf",
+		"/H/admin_W7/Configuration_StationWF4.bat",
+		"/H/admin_W7/connect.bat",
+		"/H/admin_W7/AutoRun_svallierWF4.bat",
+		"/H/admin_W7/def_repWF4.bat",
+		"/H/admin_W7/ilink/maj_ilink.bat",
+		"/H/admin_W7/ilink/add-on/client/bin/proilinkrelease_3.4.bat",
+		"/H/admin_W7/ilink/add-on/client/bin/proilinkrelease_3.4.lns.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proi_startup.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proi_startup_lns.bat",
+		"/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.lns.bat",
+		"/C/def_repWF4.bat",
+		"/H/admin_W7/ilink/add-on/client/bin/SKF_proi_startup.bat",
+		"/H/admin_W7/ilink/add-on/client/bin/SKF_proi_startup_lns.bat",
+		"/H/admin_W7/mech/maj_mech.bat",
+		"/H/admin_W7/proe/maj_pro.bat",
+		"/H/admin_W7/proe/add-on/ncpost/bin/ncpost.bat",
+		"/H/admin_W7/proe/data/configpro/sarma.pro",
+		"/H/admin_W7/ilink/add-on/client/tnsnames.ora",
+		"/H/admin/Configuration_StationWF4.bat",
+		"/H/temp/config.pro",
+		"/H/bdd_stds/proe/config/igs/alias.pro",
+		"/H/admin/win/maj_win.bat",
+		"/H/admin/proe/maj_pro.bat",
+		"/H/admin/catia/maj_catia.bat",
+		"/H/admin/archives/Upgrade/upgrade.bat",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Products/view.ctp",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Products/index.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Products/add_property.ctp",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Plugin/Taxonomy/Model/Behavior/TaxonomyBehavior.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Product.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/ProductsController.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Plugin/Taxonomy/Model/Term.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Plugin/Taxonomy/Model/TermR.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Config/bootstrap.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Config/database.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Property.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Plugin/Taxonomy/Controller/TermsController.php",
+		"/Y/abaqusMacros.py",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/PostsController.php",
+		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Post.php",
 		"/C/Users/eb1445/AppData/Roaming/Sublime Text 3/Packages/LiveReload/LiveReload.sublime-settings",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/lib/Cake/Console/Templates/skel/.htaccess",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/lib/Cake/Console/Templates/skel/webroot/.htaccess",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/webroot/.htaccess",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/.htaccess",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/.htaccess",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Config/database.php",
 		"/C/wamp/alias/materialDB.conf",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Products/addProperty.ctp",
 		"/C/wamp/alias/material.conf",
@@ -119,14 +200,11 @@
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/index.ctp",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/add.ctp",
 		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Posts/edit.ctp",
-		"/C/PTC/AutoRun_svallierWF4.bat",
 		"/H/admin/def_repWF4_W7.bat",
 		"/H/admin/Configuration_StationWF4_W7.bat",
 		"/H/admin/connect_W7.bat",
 		"/H/admin/AutoRun_svallierWF4_W7.bat",
 		"//frvalas002/General$/admin/connect.bat",
-		"/C/def_repWF4.bat",
-		"/H/admin/proe/maj_pro.bat",
 		"/H/admin/ilink/maj_ilink_W7.bat",
 		"/H/admin/ilink/add-on/client_W7/bin/SKF_proi_startup.bat",
 		"/H/admin/ilink/add-on/client_W7/bin/proilinkrelease_3.4.lns.bat",
@@ -138,30 +216,13 @@
 		"/H/admin/ilink/add-on/client/bin/SKF_proi_startup_lns.bat",
 		"/H/admin/ilink/add-on/client/bin/proilinkrelease_3.4.bat",
 		"/H/admin/connect.bat",
-		"/H/admin/Configuration_StationWF4.bat",
 		"/H/admin/AutoRun_svallierWF4.bat",
 		"/H/admin/ilink/maj_ilink.bat",
-		"/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.bat",
-		"/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.lns.bat",
-		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proi_startup.bat",
-		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proi_startup_lns.bat",
 		"/C/PTC/ProIntralink/Client_R34_M070/tnsnames.ora",
 		"/C/PTC/ProEngineer/WF4M130/bin/Machining.psf",
 		"/C/PTC/ProEngineer/WF4M130/bin/Default.psf",
 		"/C/PTC/ProEngineer/WF4M130/bin/ncpost.bat",
 		"/C/PTC/ProEngineer/WF4M130/bin/Flex3C.psf",
-		"/C/PTC/start_admin_init_intralink.bat",
-		"/C/PTC/start_vericut.bat",
-		"/C/PTC/start_pcat.bat",
-		"/C/PTC/start_borrow.bat",
-		"/C/PTC/start_bz.bat",
-		"/C/PTC/start_cfg.bat",
-		"/C/PTC/start_excelfbw1.bat",
-		"/C/PTC/start_intralink_lons.bat",
-		"/C/PTC/start_intralink_svallier.bat",
-		"/C/PTC/start_ldbcompact.bat",
-		"/C/PTC/start_ncp.bat",
-		"/C/PTC/start_noel.bat",
 		"/C/PTC/ProIntralink/Client_R34_M070/bin/Default_with_ProI.psf",
 		"/C/PTC/ProIntralink/Client_R34_M070/bin/Default_with_ProI.bat",
 		"/C/PTC/ProIntralink/Client_R34_M070/bin/SKF_proe_startup.bat",
@@ -171,55 +232,13 @@
 		"/C/Users/eb1445/Desktop/ProI configurations for Win7/SKF_proi_startup.bat",
 		"/C/Users/eb1445/Desktop/ProI configurations for Win7/Default_with_ProI.psf",
 		"/C/SIMULIA/abq_tmp/AGB NG/userscript_cae_pre.py",
-		"/Y/abaqusMacros.py",
 		"/C/SIMULIA/abq_tmp/AGB NG/abaqusMacros.py",
 		"/C/Users/eb1445/Desktop/tnsnames.ora",
 		"/C/SIMULIA/abq_tmp/AGB NG/abaqusMacros.old.py",
 		"/C/SIMULIA/abq_tmp/AGB NG/preProMacro_ACBB_mono.py",
 		"/C/SIMULIA/abq_tmp/AGB NG/__init__.py",
 		"/C/SIMULIA/abq_tmp/AGB NG/abaqusMacro.py",
-		"/Z/11 - Tool Development/03-Programs/00-Support calcul/13058-X4 - MAST rotor bearing/Calculation Files & Macro/Results/parametric study/preloadTest.var",
-		"/Z/11 - Tool Development/03-Programs/00-Support calcul/13058-X4 - MAST rotor bearing/Calculation Files & Macro/Results/parametric study/X4_paramStudy.psf",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_4/ACBB_mono_test.sta",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_3/ACBB_mono_test.sta",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_2/ACBB_mono_test.sta",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/ACBB_mono_test_3.sta",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_2/errors.txt",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/ACBB_mono_test.sta",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/errors.txt",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/execInp.py",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/cmd.bat",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/DOE_ACBB_smpl_rang_20140218_175939/Task1.DOE.Abaqus/RUN_1_1_1/iSIGHT_FD_cmd.bat",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/ACBB_mono_test.sta",
-		"/C/SIMULIA/abq_tmp/AGB NG/casDOE.txt",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/errors.txt",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/casDOE_1.txt",
-		"/C/SIMULIA/abq_tmp/AGB NG/test_isight/casDOE_0.txt",
-		"/C/SIMULIA/abq_tmp/AGB NG/export_casDOE.txt",
-		"/C/SIMULIA/abq_tmp/AGB NG/casDOE.csv",
-		"/C/SIMULIA/abq_tmp/module_precisionDisplayParts.py",
-		"/Y/abaqusMacros_save.py",
-		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/[Isight] OR model with RE set/userscript_cae_pre.py",
-		"/C/SIMULIA/abq_tmp/CESA/userscript_odb.py",
-		"/C/SIMULIA/abq_tmp/X4/report_raceway_def_OR.rpt",
-		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/13058-X4 - MAST rotor bearing/Reports/report_raceway_def_IR.rpt",
-		"/Z/11 - Tool Development/04 - Simulation Management/03 - On-going Simulations/13058-X4 - MAST rotor bearing/Reports/report_raceway_def_OR.rpt",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Controller/DeploysController.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/Model/Deploy.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/app/View/Deploys/index.ctp",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/framework/deploy.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/deploy.php",
-		"/C/Users/eb1445/Documents/workplace/github/materialDB/deplay.php",
-		"/C/Users/eb1445/AppData/Roaming/Sublime Text 3/Packages/Emmet/Default (Windows).sublime-keymap",
-		"/D/Users/Alexandre/Documents/GitHub/materialDB/framework/app/Config/core.php",
-		"/D/Users/Alexandre/Documents/GitHub/materialDB/framework/app/Config/database.php",
-		"/D/Users/Alexandre/Documents/GitHub/materialDB/framework/.gitignore",
-		"/D/Users/Alexandre/Documents/GitHub/materialDB/codeIgniter/application/config/database.php",
-		"/D/Google Drive/mycdr.img",
-		"/C/Users/alexandre/Documents/mdp.txt",
-		"/D/abq_tmp/bearing_stat_disp_V1.sta",
-		"/D/abq_tmp/bearing_stat_disp_V1.log",
-		"/C/Temp/bearing_stat_disp_V1.sta"
+		"/Z/11 - Tool Development/03-Programs/00-Support calcul/13058-X4 - MAST rotor bearing/Calculation Files & Macro/Results/parametric study/preloadTest.var"
 	],
 	"find":
 	{
@@ -237,6 +256,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"admin",
+			"M130",
+			"M220",
+			"M130",
 			"\\",
 			"test",
 			"post",
@@ -286,32 +309,62 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/Y/abaqusMacros.py",
+					"file": "/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.lns.bat",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 22781,
+						"buffer_size": 5566,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20983,
-								20983
+								5234,
+								5234
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Batch File/Batch File.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6015.0,
+						"translation.y": 2325.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/PTC/ProIntralink/Client_R34_M070/bin/proilinkrelease_3.4.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5111,
+								5317
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2167.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
